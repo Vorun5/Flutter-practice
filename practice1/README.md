@@ -1,1 +1,1 @@
-A simple command-line application.
+Добавил класс кот и обработчик котов
