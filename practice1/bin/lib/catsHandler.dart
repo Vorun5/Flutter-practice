@@ -33,7 +33,7 @@ class CatsHandler {
         case "exit":
           return;
 
-          case "help":
+        case "help":
           help();
           break;
 
@@ -43,8 +43,11 @@ class CatsHandler {
             break;
           }
           var name = readString("Enter the name of the cat you want to feed: ");
-          feedCatsByName(name);
+          if (!feedCatsByName(name)) {
+            print("There is no cats by that name");
+          }
           break;
+
         case "add":
           var name = readString("Enter the name of cat: ");
           var breed = readString("Enter the breed of cat: ");
@@ -96,6 +99,7 @@ class CatsHandler {
 
         default:
           print("Unknown command");
+
       }
     }
   }
@@ -157,9 +161,6 @@ class CatsHandler {
         find = true;
       }
     }
-    if (!find) {
-      print("There is no cats by that name");
-    }
     return find;
   }
 
@@ -173,4 +174,5 @@ class CatsHandler {
       cat.show();
     }
   }
+
 }
