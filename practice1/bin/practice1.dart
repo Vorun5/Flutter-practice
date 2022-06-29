@@ -61,10 +61,10 @@ void listHandler(List<String> list) {
         replaceValue = stdin.readLineSync() ?? "";
       }
 
-      
+
 
         if (replaceValue == "") {
-          print("Empty ")
+          print("Empty ");
         }
 
         if (list.contains(replaceValue)) {}
@@ -76,8 +76,8 @@ void listHandler(List<String> list) {
 }
 
 void main(List<String> arguments) {
-  List<String> list = [];
-  listHandler(list);
+  //List<String> list = [];
+  //listHandler(list);
 }
 
 String getHelloMessage(String name) {
