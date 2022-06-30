@@ -1,4 +1,3 @@
-
 class Cat {
   final String _name;
   final String _breed;
@@ -11,7 +10,7 @@ class Cat {
   int get age => _age;
 
   void show() {
-    print("Name: $_name | Breed: $_breed | Color: $_color $_age years");
+    print("Name: $_name | Breed: $_breed | Color: $_color | $_age years");
   }
 
   void toFeed() {

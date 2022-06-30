@@ -29,7 +29,6 @@ class CatsHandler {
       command = command.trim().toLowerCase();
 
       switch (command) {
-
         case "exit":
           return;
 
@@ -99,7 +98,6 @@ class CatsHandler {
 
         default:
           print("Unknown command");
-
       }
     }
   }
@@ -118,14 +116,13 @@ class CatsHandler {
     dynamic i;
     while (str == null) {
       print(command);
-
       str = stdin.readLineSync();
-      if (str != null) {
-        i = int.tryParse(str);
+       i = int.tryParse(str!);
         if (i != null) {
           return i;
+      } else {
+          str = null;
         }
-      }
     }
     return i;
   }
@@ -174,5 +171,4 @@ class CatsHandler {
       cat.show();
     }
   }
-
 }
