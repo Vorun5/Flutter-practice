@@ -39,7 +39,7 @@ class PageLoader {
       _load = true;
 
       final length = await pageFile.length();
-      print('> ${p.basename(_uri.path)} is loaded into $path (length: ${length + 1})');
+      print('> Page is loaded into $path (length: ${length + 1})');
       return response.body;
     } catch (err) {
       print(err);
@@ -114,6 +114,9 @@ class PageLoader {
     }
 
     // Скачиваем файлы, если это возможно
+
+
+    print('> Date\t|\tFile name\t|\tFile path\t|\tLength');
     for (var link in links) {
       String uri = link.path;
       final response = await http.Client().get(link);
@@ -131,9 +134,9 @@ class PageLoader {
       final file = await File(filePath).create();
 
       file.writeAsBytes(response.bodyBytes);
-      final length = await file.length();
-      print(
-          '> ${p.basename(uri)} is loaded into $filePath (length: ${length + 1})');
+      final length = file.lengthSync();
+      final date = file.lastModifiedSync();
+      print('> $date | ${p.basename(uri)} | $filePath | ${length + 1}');
     }
   }
 }
