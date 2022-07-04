@@ -55,8 +55,6 @@ class PageLoader {
 
 
     final uri = Uri.parse(link);
-
-    print('$link | ${p.extension(uri.path)}');
     final ex = p.extension(uri.path);
     if (!extensions.contains(ex)) {
       return null;
