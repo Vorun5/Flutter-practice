@@ -13,4 +13,5 @@ environment:
 dev_dependencies:
   lints: ^1.0.0
 dependencies: 
+  beautiful_soup_dart: ^0.2.0
   http: ^0.13.4

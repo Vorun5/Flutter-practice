@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
+  beautiful_soup_dart:
+    dependency: "direct main"
+    description:
+      name: beautiful_soup_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   collection:
     dependency: transitive
     description:
@@ -15,6 +22,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+  csslib:
+    dependency: transitive
+    description:
+      name: csslib
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.2"
+  html:
+    dependency: transitive
+    description:
+      name: html
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.15.0"
   http:
     dependency: "direct main"
     description:
