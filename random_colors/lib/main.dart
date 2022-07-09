@@ -75,7 +75,7 @@ class _RandomColorsApp extends State<RandomColorsApp> {
                         padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                         child: MaterialButton(
                           height: 40.0,
-                          color: Colors.blue,
+                          color: Colors.green,
                           onPressed: () {
                             for (int i = 0; i < _colors.length; i++) {
                               changeColor(i);
