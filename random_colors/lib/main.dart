@@ -47,6 +47,9 @@ class _RandomColorsApp extends State<RandomColorsApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Random Colors"),
@@ -116,11 +119,21 @@ class _RandomColorsApp extends State<RandomColorsApp> {
                       child: Container(
                         color: _colors[i],
                         child: Center(
-                          child: Text(
-                            "#${i + 1} RGB(${_colors[i].red}, ${_colors[i].green}, ${_colors[i].blue})",
-                            style: const TextStyle(
-                              fontSize: 30.0,
-                            ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "#${i + 1}",
+                                style: const TextStyle(
+                                  fontSize: 30.0,
+                                ),
+                              ),
+                              Text(
+                                "RGB(${_colors[i].red}, ${_colors[i].green}, ${_colors[i].blue})",
+                                style: const TextStyle(
+                                  fontSize: 30.0,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

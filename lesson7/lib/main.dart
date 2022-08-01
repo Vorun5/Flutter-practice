@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,11 +14,13 @@ void main() {
 @swidget
 Widget myApp(BuildContext context) {
   return MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: const Text("Translate"),
+    home: SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Translate"),
+        ),
+        body: const ProviderScope(child: TranslatePage()),
       ),
-      body: const ProviderScope(child: TranslatePage()),
     ),
   );
 }

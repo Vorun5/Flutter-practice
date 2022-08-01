@@ -34,8 +34,8 @@ Widget wordList(
       Column(
         children: words.words
             .map(
-              (word) => CheckBox(
-                words.selectedWords,
+              (word) => MyCheckBox(
+                words.selectedWords.contains(word.id),
                 word.id,
                 addToSelectedWords,
                 removeToSelectedWords,
@@ -56,12 +56,12 @@ Widget wordListItem(Language language, Word word) {
 }
 
 @swidget
-Widget checkBox(Set<int> ids, int id,
+Widget myCheckBox(bool v, int id,
     ValueChanged<int> addToSelectedWord,
     ValueChanged<int> removeToSelectedWord) {
   return Checkbox(
     checkColor: Colors.white,
-    value: ids.contains(id),
+    value: v,
     onChanged: (bool? value) =>
         ((value ?? false) ? addToSelectedWord : removeToSelectedWord)(id),
   );

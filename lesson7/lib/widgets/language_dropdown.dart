@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:lesson7/helpers.dart';
 import '../data/language.dart';
 import '../style.dart';
 
@@ -34,7 +35,7 @@ Widget languageDropdown(String label, Language value, ValueChanged<Language> onC
         items: Language.values
             .map((Language value) => DropdownMenuItem<Language>(
           value: value,
-          child: Text(value.name),
+          child: Text(value.name.capitalize()),
         ))
             .toList(),
       ),

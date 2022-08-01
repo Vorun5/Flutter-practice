@@ -16,8 +16,9 @@ class WordsNotifier  extends StateNotifier<Words> {
   WordsNotifier(Words initialValue) : super(initialValue);
 
   void addWords(Map<Language, String> translate) {
+
     var currentState = state;
-    final word = Word(id: getTheBiggestId(currentState.words) + 1, translations: translate);
+    final word = Word(id: getNewIdForWord(currentState.words) + 1, translations: translate);
     currentState.words.add(word);
     state = Words(currentState.words, currentState.selectedWords);
   }
@@ -37,10 +38,6 @@ class WordsNotifier  extends StateNotifier<Words> {
     final selectedWords = state.selectedWords;
     selectedWords.remove(id);
     state = Words(state.words, selectedWords);
-
-    // var currentState = state;
-    // currentState.selectedWords.remove(id);
-    // state = currentState;
   }
 
   void addToSelectedWords(int id) {
@@ -58,10 +55,8 @@ class WordsNotifier  extends StateNotifier<Words> {
     }
     state = Words(words, {});
   }
-
-
-
 }
+
 final getWordsProvider = StateNotifierProvider.autoDispose.family<WordsNotifier, Words, Words> (
       (_, initialValue) => WordsNotifier(initialValue),
 );

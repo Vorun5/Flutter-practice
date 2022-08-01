@@ -36,13 +36,13 @@ class WordListItem extends StatelessWidget {
   Widget build(BuildContext _context) => wordListItem(language, word);
 }
 
-class CheckBox extends StatelessWidget {
-  const CheckBox(
-      this.ids, this.id, this.addToSelectedWord, this.removeToSelectedWord,
+class MyCheckBox extends StatelessWidget {
+  const MyCheckBox(
+      this.v, this.id, this.addToSelectedWord, this.removeToSelectedWord,
       {Key? key})
       : super(key: key);
 
-  final Set<int> ids;
+  final bool v;
 
   final int id;
 
@@ -52,5 +52,5 @@ class CheckBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext _context) =>
-      checkBox(ids, id, addToSelectedWord, removeToSelectedWord);
+      myCheckBox(v, id, addToSelectedWord, removeToSelectedWord);
 }
