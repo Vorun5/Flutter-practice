@@ -7,8 +7,15 @@ part of 'language_dropdown.dart';
 // **************************************************************************
 
 class LanguageDropdown extends StatelessWidget {
-  const LanguageDropdown(this.label, this.value, this.onChanged, {Key? key})
+  const LanguageDropdown(
+      {Key? key,
+      required this.mode,
+      required this.label,
+      required this.value,
+      required this.onChanged})
       : super(key: key);
+
+  final DisplayMode mode;
 
   final String label;
 
@@ -17,6 +24,6 @@ class LanguageDropdown extends StatelessWidget {
   final void Function(Language) onChanged;
 
   @override
-  Widget build(BuildContext _context) =>
-      languageDropdown(label, value, onChanged);
+  Widget build(BuildContext _context) => languageDropdown(
+      mode: mode, label: label, value: value, onChanged: onChanged);
 }
